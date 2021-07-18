@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+  }
+/*bg*/
+.bg{
+    width:100%;
+    height:100vh;
+    position: absolute;
+    object-fit: cover;
+    z-index: 1;
+   
+}
+.logo{
+    width:100%;
+    position: absolute;
+    color:white;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.logo img{
+    position: relative;
+    left:40px;
+    top:20px;
+}
+.logo i{
+    font-size: 35px;
+    position: relative;
+    right:25px;
+    top:20px;
+    cursor: pointer;
+}
+/*nav*/
+nav{
+    width:100vw;
+    height:100vh;
+    background:url("image/bg2.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: brightness(0.2);
+    opacity: 0.2;
+    opacity:1;
+    z-index: 10000;
+    position: absolute;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease-in-out;
+}
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    list-style: none;
+}
+nav ul li{
+    font-size: 40px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 5px;
+    line-height: 70px;
+    position: relative;
+    cursor:pointer;
+}
+/*以下步驟才有辦法 劃出文字的底線
+li position: relative;
+li:after position: absolute; bottom:0; left:0;
+*/
+nav ul li:after{
+    content:"";
+    width:0%;
+    height:3px;
+    background-color:#b20501;
+    position: absolute;
+    bottom:0;
+    left:0;
+    transition: 1s;
+}
+nav ul li:hover:after{
+    width:100%;
+}
+/*li:hover:after 要連續寫
+li被hover時觸發li::after
+*/
+#mask1{
+    position: absolute;
+    top:20px;
+    left:-50px;
+    transform: scale(1) rotate(-15deg);
+    pointer-events: none;
+    z-index:999;
+}
+#mask2{
+    transform: scale(0.7) rotate(10deg);
+    position: absolute;
+    bottom:-20px;
+    right:0px;
+    z-index:999;
+}
+
+nav #close{
+    z-index:500;
+    filter: invert(1);
+    transform: scale(0.5);
+    position: absolute;
+    right:10px;
+    top:5px;
+    cursor: pointer;
+}
+
+
+/*title*/
+.title{
+    position: absolute;
+    z-index: 1;
+    color:white;
+    width:50%;
+    top:150px;
+    left:40px;
+}
+.title h1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    letter-spacing: 5px;
+}
+.title h1 span{
+color:#851f2a;
+
+}
+.title p{
+    font-family: 'Roboto', sans-serif;
+    width:60%;
+    font-size: 17px;
+}
+.play-icon{
+    position: absolute;
+    color:white;
+    z-index: 10;
+    top:310px;
+    left:30px;
+    transform: scale(0.6);
+}
+#watch{
+  color:white;
+  position:absolute;
+  z-index: 10;
+  top:330px;
+  left:100px;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+}
+
+/*video*/
+.mySwiper {
+    position: absolute;
+    width: 600px !important;
+    height: 160px !important;
+    left:40px;
+    bottom:30px;
+    
+    display: flex;
+    border-radius: 15px;
+    align-items: center;
+    
+  }
+
+.swiper-slide {
+    width:290px !important;
+    height: 165px !important;
+    border-radius: 15px;
+    top:0px;
+    
+}
+    /* Center slide text vertically */
+
+  .swiper-slide video {
+    display: block;
+    width:500px;
+    height: 200px;
+    object-fit: cover;
+    z-index: 999;
+}
+
+
+  .swiper-button-next, 
+  .swiper-button-prev{
+   color:white;
+   transform: scale(0.6);
+   opacity:0;
+  }
+  
+  .mySwiper:hover .swiper-button-next,
+  .mySwiper:hover .swiper-button-prev{
+    color:white;
+    transform: scale(0.6);
+    opacity:1;
+    z-index: 999;
+   }
+
+   .social{
+       display:flex;
+       flex-direction: column;
+       position: absolute;
+       right:20px;
+       top:35%;
+       z-index: 2;
+   }
+   .social img{
+       z-index: 5;
+       filter: invert(1);
+       margin-top: 10px;
+   }
+   .social img:nth-child(1){
+       transform: scale(0.4);
+       position: relative;
+        top:10px;
+   }
+   .social img:nth-child(2){
+    transform: scale(0.7);
+    position: relative;
+    top:-5px;
+}
+.social img:nth-child(3){
+    transform: scale(0.7);
+}
